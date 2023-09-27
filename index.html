@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consulta de datos en CGI</title>
+</head>
+<body>
+
+<h2>Consulta de datos:</h2>
+<button onclick="consultarDatos()">Consultar</button>
+<div id="resultado"></div>
+
+<script>
+  function consultarDatos() {
+    // Hacer una solicitud a tu script CGI en Go
+    fetch('main.cgi')
+      .then(response => response.text())
+      .then(data => {
+        // Mostrar la respuesta en el elemento con id "resultado"
+        document.getElementById('resultado').innerHTML = data;
+      })
+      .catch(error => console.error('Error:', error));
+  }
+</script>
+
+</body>
+</html>
