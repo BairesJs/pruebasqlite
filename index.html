@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mostrar salida de main.cgi</title>
+</head>
+<body>
+
+<h2>Salida de main.cgi:</h2>
+
+<div id="output"></div>
+
+<script>
+  // URL de tu script CGI
+  const cgiUrl = 'main.cgi';
+
+  // Realiza una solicitud usando fetch para obtener la salida del script CGI
+  fetch(cgiUrl)
+    .then(response => response.text())
+    .then(data => {
+      // Muestra la salida en el elemento con id "output"
+      document.getElementById('output').innerHTML = data;
+    })
+    .catch(error => console.error('Error:', error));
+</script>
+
+</body>
+</html>
